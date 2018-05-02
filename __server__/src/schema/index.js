@@ -79,13 +79,6 @@ const typeDefs = `
   }
 `;
 
-const resolvers = {
-  Query: {...Query},
-  Question: {...Question},
-  Post: {...Post},
-  User: {...User},
-  Vote: {...Vote},
-  Mutation: {...Mutation}
-};
+const resolvers = {Query, Mutation, Question, Post, User, Vote};
 
 export default makeExecutableSchema({typeDefs, resolvers});
