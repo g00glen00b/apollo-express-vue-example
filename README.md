@@ -20,3 +20,107 @@ This script will run nodemon to watch file changes and Babel to transpile the Ja
 
 ## Frontend
 Todo
+
+## GraphQL
+The application uses GraphQL to transfer data from the backend to the frontend.
+The schema used by the application can be found in [schema/index.js](graphql-qa-clone-api/src/schema/index.js).
+
+A few query examples:
+
+```
+query AllQuestions($query: Pagination!) {
+  questionCount
+  questions(query: $query) {
+    _id
+    title
+    firstPost {
+      _id
+      voteCount
+    }
+  }
+}
+```
+
+```
+query AllUsers($query: Pagination!) {
+  userCount
+  users(query: $query) {
+    _id
+    username
+    postCount
+  }
+}
+```
+
+```
+mutation CreateUser($input: UserInput!) {
+  createUser(input: $input) {
+    _id
+    username
+    postCount
+  }
+}
+```
+
+```
+mutation CreateQuestion($input: QuestionInput!) {
+  createQuestion(input: $input) {
+    _id
+    title
+    firstPost {
+      _id
+      content
+      voteCount
+      createdAt
+      author {
+        _id
+        username
+        postCount
+      }
+    }
+    answers {
+      _id
+      content
+      voteCount
+      createdAt
+      author {
+        _id
+        username
+        postCount
+      }
+    }
+  }
+}
+```
+
+
+```
+mutation CreateQuestion($input: QuestionInput!) {
+  createQuestion(input: $input) {
+    _id
+    title
+    firstPost {
+      _id
+      content
+      voteCount
+      createdAt
+      author {
+        _id
+        username
+        postCount
+      }
+    }
+    answers {
+      _id
+      content
+      voteCount
+      createdAt
+      author {
+        _id
+        username
+        postCount
+      }
+    }
+  }
+}
+```

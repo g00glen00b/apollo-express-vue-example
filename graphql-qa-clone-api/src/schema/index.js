@@ -11,6 +11,8 @@ const typeDefs = `
     questions(query: Pagination!): [Question]
     questionCount: Int
     question(id: ID!): Question
+    users(query: Pagination!): [User]
+    userCount: Int
     user(id: ID!): User
   }
   
