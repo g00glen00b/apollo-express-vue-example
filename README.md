@@ -2,8 +2,8 @@
 Code example demonstrating how to use GraphQL with both Node.js and Vue.
 The application consists out of two parts:
 
-1. A back-end module (`__server__`)
-2. A frontend module (`__client__`)
+1. A back-end module ([`graphql-qa-clone-api`](./graphql-qa-clone-api))
+2. A frontend module ([`graphql-qa-clone-vue`](./graphql-qa-clone-vue))
 
 ## Back-end
 The back-end part is a simple Node.js application using Express as a web framework, Mongoose for persistence into a MongoDB database and Apollo for GraphQL. 
