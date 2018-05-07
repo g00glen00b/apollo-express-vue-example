@@ -1,21 +1,28 @@
 <template>
-  <at-card>
-    <div class="row">
-      <div class="col-2">
-        {{question.firstPost.voteCount}}
+  <div class="card-wrapper">
+    <at-card>
+      <div class="row">
+        <div class="col-2">
+          {{question.firstPost.voteCount}}
+        </div>
+        <div class="col-10">
+          {{question.title}}<br />
+          <at-tag v-if="isNew" color="primary">New question</at-tag>
+        </div>
       </div>
-      <div class="col-10">
-        {{question.title}}<br />
-        <NewBadge :date="question.firstPost.createdAt"></NewBadge>
-      </div>
-    </div>
-  </at-card>
+    </at-card>
+  </div>
 </template>
 
 <script>
-  import NewBadge from '../core/NewBadge';
+  import moment from 'moment';
+
   export default {
-    components: {NewBadge},
+    computed: {
+      isNew () {
+        return moment(this.question.firstPost.createdAt).isAfter(moment().subtract(1, 'day'));
+      }
+    },
     props: {
       question: {
         required: true,
@@ -26,7 +33,7 @@
 </script>
 
 <style scoped>
-  .at-card {
+  .card-wrapper {
     margin: .7em 0;
   }
 </style>

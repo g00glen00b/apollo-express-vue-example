@@ -1,7 +1,11 @@
 <template>
-  <at-menu mode="horizontal" active-name="questions">
-    <at-menu-item name="questions"><i class="icon icon-home"></i> Questions</at-menu-item>
-    <at-menu-item name="users"><i class="icon icon-users"></i> Users</at-menu-item>
+  <at-menu mode="horizontal" router>
+    <at-menu-item name="questions" :to="{name: 'Questions'}">
+      <i class="icon icon-home"></i> Questions
+    </at-menu-item>
+    <at-menu-item name="users" :to="{name: 'Users'}">
+      <i class="icon icon-users"></i> Users
+    </at-menu-item>
   </at-menu>
 </template>
 
