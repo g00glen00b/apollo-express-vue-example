@@ -5,6 +5,7 @@ import Post from '../resolvers/Post';
 import User from '../resolvers/User';
 import Vote from '../resolvers/Vote';
 import Mutation from '../resolvers/Mutation';
+import ISODate from '../scalars/ISODate';
 
 const typeDefs = `
   type Query {
@@ -33,7 +34,7 @@ const typeDefs = `
   type Post {
     _id: ID!
     content: String
-    createdAt: String
+    createdAt: ISODate
     author: User
     votes: [Vote]
     voteCount: Int
@@ -79,8 +80,10 @@ const typeDefs = `
     postId: ID!
     type: String
   }
+  
+  scalar ISODate
 `;
 
-const resolvers = {Query, Mutation, Question, Post, User, Vote};
+const resolvers = {Query, Mutation, Question, Post, User, Vote, ISODate};
 
 export default makeExecutableSchema({typeDefs, resolvers});

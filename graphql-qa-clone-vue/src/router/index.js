@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import QuestionsPage from '@/components/questions/QuestionsPage';
 import UsersPage from '@/components/users/UsersPage';
 import NotFoundPage from '@/components/core/NotFoundPage';
+import CreateQuestionPage from '@/components/questions/CreateQuestionPage';
 
 Vue.use(Router);
 
@@ -11,6 +12,10 @@ export default new Router({
     path: '/questions',
     name: 'Questions',
     component: QuestionsPage
+  }, {
+    path: '/questions/create',
+    name: 'CreateQuestion',
+    component: CreateQuestionPage
   }, {
     path: '/users',
     name: 'Users',

@@ -5,4 +5,12 @@ const promisify = query => new Promise((resolve, reject) => {
   });
 });
 
-export {promisify};
+const returnOnError = (operation, alternative) => {
+  try {
+    return operation();
+  } catch (e) {
+    return alternative;
+  }
+};
+
+export {promisify, returnOnError};

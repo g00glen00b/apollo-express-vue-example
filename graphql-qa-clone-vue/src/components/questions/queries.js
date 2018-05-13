@@ -9,7 +9,17 @@ export const AllQuestions = gql`
       firstPost {
         _id
         voteCount
+        createdAt
       }
     }
   }  
+`;
+
+export const CreateQuestion = gql`
+  mutation CreateQuestion($input: QuestionInput!) {
+    createQuestion(input: $input) {
+      _id
+      title
+    }
+  }
 `;

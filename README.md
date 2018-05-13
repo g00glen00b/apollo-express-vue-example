@@ -36,6 +36,7 @@ query AllQuestions($query: Pagination!) {
     firstPost {
       _id
       voteCount
+      createdAt
     }
   }
 }

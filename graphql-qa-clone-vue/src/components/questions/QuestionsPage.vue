@@ -1,6 +1,9 @@
 <template>
   <div>
-    <h1 class="page-title">Questions</h1>
+    <h1 class="page-title clearfix">
+      Questions
+      <at-button type="primary" class="pull-right" hollow v-on:click="openCreateQuestion">Ask question</at-button>
+    </h1>
     <QuestionList :questions="questions"></QuestionList>
     <at-pagination :total="questionCount" show-total v-on:page-change="updateOffset"></at-pagination>
   </div>
@@ -36,6 +39,9 @@
     methods: {
       updateOffset (pageNumber) {
         this.offset = (pageNumber - 1) * 10;
+      },
+      openCreateQuestion () {
+        this.$router.push({name: 'CreateQuestion'});
       }
     }
   }
