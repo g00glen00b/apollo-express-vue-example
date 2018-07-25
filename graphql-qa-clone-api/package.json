@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "start": "nodemon --watch src --exec babel-node src/index.js",
-    "test": "ava --verbose"
+    "ava": "ava --verbose",
+    "tape": "babel-node node_modules/.bin/tape test/tape/**/*.js | faucet"
   },
   "dependencies": {
     "apollo-server-express": "^1.3.6",
@@ -22,8 +23,11 @@
     "@babel/preset-stage-2": "^7.0.0-beta.54",
     "@babel/register": "^7.0.0-beta.54",
     "ava": "1.0.0-beta.6",
+    "faucet": "0.0.1",
     "nodemon": "^1.17.3",
-    "sinon": "^6.1.3"
+    "nyc": "^12.0.2",
+    "sinon": "^6.1.3",
+    "tape": "^4.9.1"
   },
   "ava": {
     "files": [

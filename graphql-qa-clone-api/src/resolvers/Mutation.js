@@ -47,8 +47,7 @@ const resolvers = {
       if (err) reject(err);
       else resolve(result);
     });
-  }),
-  createVote: () => {}
+  })
 };
 
 export default resolvers;
