@@ -4,7 +4,8 @@
   "scripts": {
     "start": "nodemon --watch src --exec babel-node src/index.js",
     "ava": "ava --verbose",
-    "tape": "babel-node node_modules/.bin/tape test/tape/**/*.js | faucet"
+    "tape": "babel-node node_modules/.bin/tape test/tape/**/*.js | faucet",
+    "jest": "jest"
   },
   "dependencies": {
     "apollo-server-express": "^1.3.6",
@@ -23,7 +24,10 @@
     "@babel/preset-stage-2": "^7.0.0-beta.54",
     "@babel/register": "^7.0.0-beta.54",
     "ava": "1.0.0-beta.6",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.4.0",
     "faucet": "0.0.1",
+    "jest": "^23.4.1",
     "nodemon": "^1.17.3",
     "nyc": "^12.0.2",
     "sinon": "^6.1.3",
@@ -35,6 +39,11 @@
     ],
     "require": [
       "@babel/register"
+    ]
+  },
+  "jest": {
+    "testMatch": [
+      "**/test/jest/**/*.js?(x)"
     ]
   }
 }
